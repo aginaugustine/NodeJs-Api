@@ -24,6 +24,8 @@ jobs:
               run: |                    # Multiline commands of the step 2
                   node -v
                   npm -v
+                  npm install -g mbt
+                  mbt -v
 
             - name: cloning repo files into the vm   # Consuming pre published actions from the marketplace
               uses: actions/checkout@v2.3.4          # Signature of the action you want to use here from the market place
