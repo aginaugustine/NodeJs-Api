@@ -1,6 +1,8 @@
 name: TestRun #Name of the workflow
 
-on: [push]
+on:
+  push: 
+    branches: [main]
 # On which events this workflow should be triggered. We can use this as an array as well
 
 # on: [push, pull_request, issue]
