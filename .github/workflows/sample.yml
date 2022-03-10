@@ -1,1 +1,35 @@
+name: Any-Name #Name of the workflow
+
+on: [push]
+# On which events this workflow should be triggered. We can use this as an array as well
+
+# on: [push, pull_request, issue]
+
+# We can specify events like this as well
+# on:
+#   pull_request:
+#     types: [opened, closed, reopened]
+
+jobs:
+    run-shell-command:         # Name of the job 1
+        runs-on: ubuntu-latest # Selecting a GitHub Hosted Runner (Here selected an ubuntu machine)
+
+        steps:                      # Automated Steps of the job
+            - name: echo a string   # Name of the Step 1 (Optional)
+              run: echo "Hello"     # command of the step 1
+
+            - name: multiline commands  # Name of the Step 2 
+              run: |                    # Multiline commands of the step 2
+                  node -v
+                  npm -v
+
+            - name: cloning repo files into the vm   # Consuming pre published actions from the marketplace
+              uses: actions/checkout@v2.3.4          # Signature of the action you want to use here from the market place
+
+    run-windows-command:              # Name of the job 2
+        runs-on: windows-latest       # Selecting a GitHub Hosted Runner (Here selected a windows machine)
+        needs: ["run-shell-command"]  # If we want to run the first job before triggering the this job, we can set 'needs'
+        steps:
+            - name: Echo the Directory
+              run: pwd
 
