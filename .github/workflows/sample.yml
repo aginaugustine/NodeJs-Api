@@ -2,7 +2,7 @@ name: coi_pipeline #Name of the workflow
 
 on:
   pull_request: 
-    branches: [test_cicd_pipeline1]
+    branches: [master]
 # On which events this workflow should be triggered. We can use this as an array as well
 
 # on: [push, pull_request, issue]
