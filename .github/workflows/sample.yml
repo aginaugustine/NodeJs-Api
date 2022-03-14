@@ -20,7 +20,7 @@ jobs:
           run:
             working-directory: package.json
         steps:
-        - uses: actions/checkout@master
+        - uses: actions/checkout@v2
         - run:  echo "package json script"
         - run: test_script
 
