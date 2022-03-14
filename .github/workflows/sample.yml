@@ -25,8 +25,7 @@ jobs:
         needs: ["_Code_Scanning"]  # If we want to run the first job before triggering the this job, we can set 'needs'
         steps:
             - name: MBT Build Tool
-            - run: npm install -g mbt
-            - run: mbt -v
+              run: npm install -g mbt
                                 
     _Code_Deploy:  
         runs-on: 
