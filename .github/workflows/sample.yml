@@ -18,6 +18,7 @@ jobs:
           - ubuntu-latest       # Selecting a GitHub Hosted Runner (Here selected a windows machine)
         steps:
         - uses: actions/checkout@master
+        - run: cd ./package.json
         - run:  echo "package json script"
         - run: test_script
 
