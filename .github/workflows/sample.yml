@@ -18,7 +18,7 @@ jobs:
           - ubuntu-latest       # Selecting a GitHub Hosted Runner (Here selected a windows machine)
         defaults:
           run:
-            working-directory: ./package.json
+            working-directory: package.json
         steps:
         - uses: actions/checkout@master
         - run:  echo "package json script"
