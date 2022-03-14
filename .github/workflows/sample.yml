@@ -16,9 +16,6 @@ jobs:
     _Code_Scanning:         # Name of the job 1
         runs-on: 
           - ubuntu-latest       # Selecting a GitHub Hosted Runner (Here selected a windows machine)
-        defaults:
-          run:
-            working-directory: package.json
         steps:
         - uses: actions/checkout@v2
         - run:  echo "package json script"
