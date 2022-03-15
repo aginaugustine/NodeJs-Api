@@ -22,6 +22,7 @@ jobs:
                   echo "docker build"
                   docker build -t ppiper/xs-cli --build-arg XSZIP=XS_CLIENT00P_143-70001320.ZIP .
                   docker run ppiper/xs-cli xs help deploy
+                  echo ${{ ppiper/xs-cli }}
 #                 docker build . --file Dockerfile --tag docker.io
                   
                           
