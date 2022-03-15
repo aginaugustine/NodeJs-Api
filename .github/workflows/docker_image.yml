@@ -1,8 +1,7 @@
 name: coi_docker_pipeline #Name of the workflow
 
 on:
-  pull_request: 
-    branches: [master]
+  workflow_call:
 # On which events this workflow should be triggered. We can use this as an array as well
 
 # on: [push, pull_request, issue]
