@@ -6,6 +6,9 @@ on:
 # On which events this workflow should be triggered. We can use this as an array as well
 
 # on: [push, pull_request, issue]
+  push:
+     paths-ignore:
+      - 'model/**'
 
 # We can specify events like this as well
 # on:
