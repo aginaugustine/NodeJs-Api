@@ -1,4 +1,18 @@
+name: coi_docker_pipeline #Name of the workflow
 
+on:
+  pull_request: 
+    branches: [master]
+# On which events this workflow should be triggered. We can use this as an array as well
+
+# on: [push, pull_request, issue]
+
+# We can specify events like this as well
+# on:
+#   pull_request:
+#     types: [opened, closed, reopened]
+
+jobs:
     _Docker_Image_build:
         runs-on: 
           - ubuntu-latest
@@ -8,7 +22,7 @@
               run: |
                   echo "docker build"
                   docker build -t ppiper/xs-cli --build-arg XSZIP=XS_CLIENT00P_143-70001320.ZIP .
-                  docker run ppiper/xs-cli xs -v
+                  docker run ppiper/xs-cli xs -help
 #                 docker build . --file Dockerfile --tag docker.io
                   
                           
