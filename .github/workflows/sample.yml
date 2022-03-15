@@ -46,7 +46,9 @@ jobs:
         needs: ["_Code_Build","_Docker_Create"]  # If we want to run the first job before triggering the this job, we can set 'needs'
         steps:
             - name: Echo the Directory
-              run: echo "deploy phase"
+              run: |
+                    echo "deploy phase"
+                    docker run ppiper/xs-cli xs version
 
                   
                           
