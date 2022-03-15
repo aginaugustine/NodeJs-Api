@@ -16,7 +16,7 @@ RUN apt-get update && \
     mkdir --parents ${XSCLI} && \
     unzip -d ${XSCLI} /tmp/${XSZIP} && \
     rm --recursive --force /tmp/${XSZIP} && \
-    chown --recursive piper:piper ${XSCLI}
+    chown --recursive piper:piper ${XSCLI};exit 0
     
 USER piper
 WORKDIR /home/piper
