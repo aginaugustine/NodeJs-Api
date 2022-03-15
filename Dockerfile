@@ -8,7 +8,7 @@ ENV PATH=$PATH:${XSCLI}/bin
 COPY ${XSZIP} /tmp/${XSZIP}
 
 # ps needs to be available to be able to be used in docker.inside, see https://issues.jenkins-ci.org/browse/JENKINS-40101
-RUN apt-get update && \
+RUN apt-get update || true && \
     apt-get install --yes --no-install-recommends procps unzip || true && \
     rm -rf /var/lib/apt/lists/* && \
     addgroup -gid 1000 piper && \
