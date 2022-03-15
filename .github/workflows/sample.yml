@@ -8,7 +8,7 @@ on:
 # on: [push, pull_request, issue]
   push:
      paths-ignore:
-      - 'model/**'
+      - 'models/**'
 
 # We can specify events like this as well
 # on:
