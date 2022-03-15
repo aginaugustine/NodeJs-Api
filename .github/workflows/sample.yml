@@ -36,10 +36,7 @@ jobs:
             - run: mbt -v
             
     _Docker_Image_Create:     #job calls another local workflow
-        runs-on:
-          -ubuntu-latest
-        steps:  
-        - uses: ./.github/workflows/docker_image.yml  
+        uses: ./.github/workflows/docker_image.yml  
                                 
     _Code_Deploy:  
         runs-on: 
