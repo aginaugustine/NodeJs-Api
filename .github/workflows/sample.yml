@@ -35,13 +35,15 @@ jobs:
             - run: npm install -g mbt
             - run: mbt -v
             
-    _Docker_Image_Create:     #job calls another local workflow
+    _Docker_Create:     #job calls another local workflow
+
         uses: ./.github/workflows/docker_image.yml  
+
                                 
     _Code_Deploy:  
         runs-on: 
           - ubuntu-latest       # Selecting a GitHub Hosted Runner (Here selected a windows machine)
-        needs: ["_Code_Build"]  # If we want to run the first job before triggering the this job, we can set 'needs'
+        needs: ["_Code_Build","_Docker_Create"]  # If we want to run the first job before triggering the this job, we can set 'needs'
         steps:
             - name: Echo the Directory
               run: echo "deploy phase"
