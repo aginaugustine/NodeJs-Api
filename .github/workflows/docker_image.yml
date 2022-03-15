@@ -1,1 +1,14 @@
 
+    _Docker_Image_build:
+        runs-on: 
+          - ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Build the Docker image
+              run: |
+                  echo "docker build"
+                  docker build -t ppiper/xs-cli --build-arg XSZIP=XS_CLIENT00P_143-70001320.ZIP .
+                  docker run ppiper/xs-cli xs -v
+#                 docker build . --file Dockerfile --tag docker.io
+                  
+                          
