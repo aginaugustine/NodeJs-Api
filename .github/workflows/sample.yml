@@ -48,6 +48,8 @@ jobs:
             - name: Build the Docker image
               run: |
                   echo "docker build"
-                  docker build . --file Dockerfile --tag docker.io
+                  docker build -t ppiper/xs-cli --build-arg XSZIP=XS_CLIENT00P_<version>.ZIP .
+                  docker run ppiper/xs-cli xs -v
+#                  docker build . --file Dockerfile --tag docker.io
                   
                           
