@@ -48,7 +48,8 @@ jobs:
             - name: Echo the Directory
               run: |
                     echo "deploy phase"
-                    docker run ppiper/xs-cli xs version
+                    docker images
+            #        docker run ppiper/xs-cli xs version
 
                   
                           
