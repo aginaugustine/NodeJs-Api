@@ -6,6 +6,9 @@ on:
 # On which events this workflow should be triggered. We can use this as an array as well
 
 # on: [push, pull_request, issue]
+  push:
+     paths-ignore:
+      - 'models/**'
 
 # We can specify events like this as well
 # on:
@@ -31,14 +34,22 @@ jobs:
                 node-version: '10'
             - run: npm install -g mbt
             - run: mbt -v
+            
+    _Docker_Create:     #job calls another local workflow
+
+        uses: ./.github/workflows/docker_image.yml  
+
                                 
     _Code_Deploy:  
         runs-on: 
           - ubuntu-latest       # Selecting a GitHub Hosted Runner (Here selected a windows machine)
-        needs: ["_Code_Build"]  # If we want to run the first job before triggering the this job, we can set 'needs'
+        needs: ["_Code_Build","_Docker_Create"]  # If we want to run the first job before triggering the this job, we can set 'needs'
         steps:
             - name: Echo the Directory
-              run: echo "deploy phase"
+              run: |
+                    echo "deploy phase"
+                    docker images
+            #        docker run ppiper/xs-cli xs version
 
                   
                           
