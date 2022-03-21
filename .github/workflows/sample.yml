@@ -40,7 +40,7 @@ jobs:
           - ubuntu-latest 
         steps:
         - uses: actions/checkout@v2
-        - uses: /.github/workflows/docker_image.yml@latest 
+        - uses: /.github/workflows/docker_image.yml
         - run : docker ps -a
 
                                 
