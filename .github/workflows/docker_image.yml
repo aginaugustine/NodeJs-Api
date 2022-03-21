@@ -24,6 +24,6 @@ jobs:
                   docker run ppiper/xs-cli 
                   docker ps -a
                   docker inspect --format="{{.Id}}" ppiper/xs-cli
-                  docker ps --format 'CONTAINER ID : {{.ID}}
+                  docker ps --format 'CONTAINER ID : {{.ID}}'
                   
                           
