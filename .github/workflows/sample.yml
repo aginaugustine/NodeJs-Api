@@ -36,11 +36,8 @@ jobs:
             - run: mbt -v
             
     _Docker_Create:     #job calls another local workflow
-        runs-on: 
-          - ubuntu-latest 
-        steps:
-        - uses: ./.github/workflows/docker_image.yml
-        - run : docker ps -a
+         uses: ./.github/workflows/docker_image.yml
+
 
                                 
     _Code_Deploy:  
@@ -51,7 +48,7 @@ jobs:
             - name: Echo the Directory
               run: |
                     echo "deploy phase"
-            #        docker images
+                    docker ps -a
             #        docker run ppiper/xs-cli xs version
 
                   
