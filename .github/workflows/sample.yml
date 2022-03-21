@@ -20,7 +20,7 @@ jobs:
         runs-on: 
           - ubuntu-latest       # Selecting a GitHub Hosted Runner (Here selected a windows machine)
         steps:
-   #     - uses: actions/checkout@v2
+        - uses: actions/checkout@v2
         - run:  echo "package json script"
         - run: npm run test_script
 
