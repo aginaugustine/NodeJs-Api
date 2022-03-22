@@ -22,7 +22,9 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - run:  echo "package json script"
-        - run: npm run test_script
+        - run: |
+                 npm config set @sap:registry=https://npm.sap.com
+                 npm install @sap/xssec
 
     _Code_Build:              # Name of the job 2
         runs-on: 
