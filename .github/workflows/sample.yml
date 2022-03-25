@@ -23,6 +23,7 @@ jobs:
         - uses: actions/checkout@v2
         - run:  echo "package json script"
         - run: |
+                npm i
                 npm run test-coverage
 
     _Code_Build:              # Name of the job 2
