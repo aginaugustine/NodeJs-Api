@@ -14,7 +14,7 @@
     "test": "node node_modules/jest/bin/jest --config jest.json",
     "test-coverage": "node node_modules/jest/bin/jest --coverage --config jest.json",
   },
-  "author": "Jonas Schmedtmann",
+  "author": "Agipan",
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
