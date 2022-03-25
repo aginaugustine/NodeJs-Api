@@ -12,7 +12,7 @@
     "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
     "test_script":"node -v",
     "test": "node node_modules/jest/bin/jest --config jest.json",
-    "test-coverage": "node node_modules/jest/bin/jest --coverage --config jest.json",
+    "test-coverage": "node node_modules/jest/bin/jest --coverage --config jest.json"
   },
   "author": "Agipan",
   "license": "ISC",
