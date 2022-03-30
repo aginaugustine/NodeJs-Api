@@ -15,7 +15,7 @@ RUN apk add --no-cache unzip && \
  #   useradd piper --uid 1000 --gid 1000 --shell /bin/bash --create-home && \
     mkdir --parents ${XSCLI} && \
     unzip -d ${XSCLI} /tmp/${XSZIP} && \
-    rm --rf /tmp/${XSZIP} 
+    rm -rf /tmp/${XSZIP} 
  #   chown --recursive piper:piper ${XSCLI}
     
 #USER piper
