@@ -11,13 +11,13 @@ COPY ${XSZIP} /tmp/${XSZIP}
 RUN apt-get update || true && \
     apt-get install --yes --no-install-recommends procps unzip || true && \
     rm -rf /var/lib/apt/lists/* && \
-    addgroup -gid 1000 piper && \
-    useradd piper --uid 1000 --gid 1000 --shell /bin/bash --create-home && \
+ #   addgroup -gid 1000 piper && \
+ #   useradd piper --uid 1000 --gid 1000 --shell /bin/bash --create-home && \
     mkdir --parents ${XSCLI} && \
     unzip -d ${XSCLI} /tmp/${XSZIP} && \
-    rm --recursive --force /tmp/${XSZIP} && \
-    chown --recursive piper:piper ${XSCLI}
+    rm --recursive --force /tmp/${XSZIP} 
+ #   chown --recursive piper:piper ${XSCLI}
     
-USER piper
-WORKDIR /home/piper
+#USER piper
+#WORKDIR /home/piper
 
