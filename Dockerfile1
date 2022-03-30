@@ -17,12 +17,12 @@ COPY ${XSZIP} /tmp/${XSZIP}
 RUN apk add --no-cache unzip && \
     apk add --no-cache procps && \
     rm -rf /var/lib/apt/lists/* && \
-    addgroup --gid 1000 -S piper && \
-    adduser -S piper --uid 1000 --ingroup piper --shell /bin/bash --home /home/piper && \
+#    addgroup --gid 1000 -S piper && \
+#    adduser -S piper --uid 1000 --ingroup piper --shell /bin/bash --home /home/piper && \
     mkdir --parents ${XSCLI} && \
     unzip -d ${XSCLI} /tmp/${XSZIP} && \
     rm -rf /tmp/${XSZIP} && \
     chown --recursive piper:piper ${XSCLI}
     
-USER piper
-WORKDIR /home/piper
+# USER piper
+# WORKDIR /home/piper
