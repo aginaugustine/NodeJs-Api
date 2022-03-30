@@ -22,7 +22,9 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - run:  echo "package json script"
-        - run: npm run test_script
+        - run: |
+                npm i
+                npm run test-coverage
 
     _Code_Build:              # Name of the job 2
         runs-on: 
@@ -36,8 +38,9 @@ jobs:
             - run: mbt -v
             
     _Docker_Create:     #job calls another local workflow
+         uses: ./.github/workflows/docker_image.yml
 
-        uses: ./.github/workflows/docker_image.yml  
+
 
                                 
     _Code_Deploy:  
@@ -48,8 +51,8 @@ jobs:
             - name: Echo the Directory
               run: |
                     echo "deploy phase"
-            #        docker images
-            #        docker run ppiper/xs-cli xs version
+                    docker ps -a
+
 
                   
                           

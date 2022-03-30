@@ -20,8 +20,9 @@ jobs:
             - name: Build the Docker image
               run: |
                   echo "docker build"
+                  docker version
                   docker build -t ppiper/xs-cli --build-arg XSZIP=XS_CLIENT00P_143-70001320.ZIP .
-                  docker run ppiper/xs-cli 
-                  docker ps -a
+                  docker run ppiper/xs-cli xs version
+                  
                   
                           
