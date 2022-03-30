@@ -41,6 +41,7 @@ jobs:
          uses: ./.github/workflows/docker_image.yml
 
 
+
                                 
     _Code_Deploy:  
         runs-on: 
@@ -51,7 +52,7 @@ jobs:
               run: |
                     echo "deploy phase"
                     docker ps -a
-            #        docker run ppiper/xs-cli xs version
+                    docker run ppiper/xs-cli xs version
 
                   
                           
