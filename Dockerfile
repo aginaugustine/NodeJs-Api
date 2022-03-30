@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM openjdk:8-alpine
 
 ARG XSZIP
 ENV VERSION 0.1
